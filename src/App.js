@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { GlobalStyle } from './components/GlobalStyle';
+import styled from 'styled-components';
+import Header from './components/Header/Header';
+
+const AppContainer = styled.div`
+  background-image: linear-gradient(#182434f5,#799cbff0,#d4e4ed);
+  height: 100vh;
+`
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      once: true
+    });
+
+  }, [])
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <GlobalStyle />
+      <Header />
+    </AppContainer>
   );
 }
 
