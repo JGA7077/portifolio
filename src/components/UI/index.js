@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { blueBabe } from "./variables";
 
 // Mixins
 
-export const FlexboxContainer = (justify = 'center', align = 'center', direction = 'row') => `
+export const FlexboxContainer = (props) => `
   display: flex;
-  justify-content: ${justify};
-  align-items: ${align};
-  flex-direction: ${direction};
+  justify-content: ${props?.justify || 'center'};
+  align-items: ${props?.align || 'center'};
+  flex-direction: ${props?.direction || 'row'};
 `
 
 // Components
@@ -33,12 +34,35 @@ export const ListItem = styled.li`
     width: 100%;
     height: 6px;
     right: 0;
-    background: #89b6c6;
-    /* background: #6d829b; */
+    background: ${blueBabe};
     border-radius: 3px;
   }
 `
 
 export const LinkItem = styled.a`
   font-weight: 700;
+`
+
+export const AboutMeSection = styled.section`
+  height: 100vh;
+  padding: 0 20px;
+  position: relative;
+`
+
+export const MainTitle = styled.h1`
+  font-family: 'Playfair Display', serif;
+  width: 100%;
+  font-size: 48px;
+  text-align: center;
+`
+
+export const Subtitle = styled.h2`
+  font-family: 'Playfair Display', serif;
+  width: 100%;
+  font-size: 38px;
+  text-align: center;
+`
+
+export const TextParagraph = styled.p`
+  font-size: 24px;
 `
