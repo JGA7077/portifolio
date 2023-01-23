@@ -21,6 +21,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   position: relative;
   color: #ede9e8;
+  cursor: pointer;
   
   &::after {
     right: 25px;
@@ -37,10 +38,10 @@ export const ListItem = styled.li`
     background: ${blueBabe};
     border-radius: 3px;
   }
-`
 
-export const LinkItem = styled.a`
-  font-weight: 700;
+  a {
+    font-weight: 700;
+  }
 `
 
 export const AboutMeSection = styled.section`

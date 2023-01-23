@@ -42,24 +42,23 @@ const ProfileImg = styled.img`
   width: 296px;
 `
 
-const GreetingTitle = styled(MainTitle)`
-  align-self: center;
-  margin: 40px 0 20px;
-  color: ${blackestBlueTransp};
-`
-
-const GreetingText = styled(TextParagraph)`
-  text-align: justify;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 0 20px;
-`
-
 const TextBox = styled.div`
   border-radius: 8px;
   width: 100%;
   height: 50%;
   padding: 20px 36px;
+
+  h1 {
+    margin: 40px 0 20px;
+    color: ${blackestBlueTransp};
+  }
+
+  p {
+    text-align: justify;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
 `
 
 const TechnologiesContainer = styled.div`
@@ -67,12 +66,12 @@ const TechnologiesContainer = styled.div`
   ${FlexboxContainer({ direction: 'column' })};
   gap: 20px;
   padding: 0 50px;
-`
 
-const TechnologiesTitle = styled(Subtitle)`
-  align-self: center;
-  margin: 0 0 20px;
-  color: ${blackestBlueTransp};
+  h2 {
+    align-self: center;
+    margin: 0 0 20px;
+    color: ${blackestBlueTransp};
+  }
 `
 
 const TechnologyList = styled.div`
@@ -168,25 +167,25 @@ const technologiesToList = [
 ]
 
 const AboutMe = () => {
-  
+
   return (
-    <AboutMeSection>
+    <AboutMeSection id="apresentacao">
       <BackgroundApresentation />
 
       <ApresentationBox>
         <ProfileImg src={profileImg} alt="Foto de Perfil" data-aos="fade-right" data-aos-duration="1000" />
         <TextBox>
-          <GreetingTitle data-aos="fade-up" data-aos-duration="1100">Prazer, João Gabriel</GreetingTitle>
-          <GreetingText data-aos="fade-up" data-aos-duration="1200">
+          <MainTitle data-aos="fade-up" data-aos-duration="1100">Prazer, João Gabriel</MainTitle>
+          <TextParagraph data-aos="fade-up" data-aos-duration="1200">
             Tenho 29 anos, sou desenvolvedor FrontEnd e comecei a estudar desenvolvimento web a cerca de 3 anos. Tive a primeira oportunidade de ingressar na área como FrontEnd Júnior por volta de 1 ano e meio, hoje tenho trabalhado como Freelancer e estou em busca de enfrentar novos desafios e obter novos conhecimentos.
-          </GreetingText>
+          </TextParagraph>
         </TextBox>
       </ApresentationBox>
 
       <TechnologiesContainer>
-        <TechnologiesTitle data-aos="fade-up" data-aos-duration="1200">
+        <Subtitle data-aos="fade-up" data-aos-duration="1200">
           Entre as tecnologias que atuo, estão:
-        </TechnologiesTitle>
+        </Subtitle>
         <TechnologyList data-aos="fade-right" data-aos-duration="1400">
           {technologiesToList.map(technology => (
             <TechnologyListItem key={technology.name}>

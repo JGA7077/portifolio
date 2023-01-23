@@ -8,6 +8,8 @@ import AboutMe from './components/AboutMe/AboutMe'
 
 const AppContainer = styled.div`
   background-image: linear-gradient(#182434f5,#799cbff0,#d4e4ed);
+  position: absolute;
+  top: 60px;
 `
 
 function App() {

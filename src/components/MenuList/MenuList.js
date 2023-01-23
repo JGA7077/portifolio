@@ -3,10 +3,14 @@ import MenuItem from "../MenuItem/MenuItem";
 
 const MenuList = () => {
   const menuLinks = [
-    {linkName: "Apresentação", linkUrl: '#apresentacao'},
-    {linkName: "Projetos", linkUrl: '#projetos'},
-    {linkName: "Experiência Profissional", linkUrl: '#experiencia-profissional'},
-    {linkName: "Contato", linkUrl: '#contato'},
+    // {linkName: "Apresentação", linkUrl: '#apresentacao'},
+    // {linkName: "Projetos", linkUrl: '#projetos'},
+    // {linkName: "Experiência Profissional", linkUrl: '#experiencia-profissional'},
+    // {linkName: "Contato", linkUrl: '#contato'},
+    {linkName: "Apresentação", linkUrl: 'apresentacao'},
+    {linkName: "Projetos", linkUrl: 'projetos'},
+    {linkName: "Experiência Profissional", linkUrl: 'experiencia-profissional'},
+    {linkName: "Contato", linkUrl: 'contato'},
   ]
 
   return (
