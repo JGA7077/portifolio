@@ -16,7 +16,7 @@ import styledComponentsIcon from '../../assets/imgs/styled-components-icon.png'
 import gulpJsIcon from '../../assets/imgs/gulp-js-icon.webp'
 import jQueryIcon from '../../assets/imgs/jquery-icon.png'
 
-import { FlexboxContainer, MainTitle, TextParagraph, AboutMeSection, Subtitle } from "../UI";
+import { FlexboxContainer, MainTitle, TextParagraph, AboutMeSection, Title } from "../UI";
 
 import { blackestBlueTransp } from "../UI/variables";
 
@@ -31,7 +31,7 @@ const BackgroundApresentation = styled.div`
   position: absolute;
   width: 92%;
   height: 150px;
-  background-color: #a3afbc;
+  background-color: #8d98aa;
   right: 0;
   top: 48px;
   z-index: 0;
@@ -70,7 +70,6 @@ const TechnologiesContainer = styled.div`
   h2 {
     align-self: center;
     margin: 0 0 20px;
-    color: ${blackestBlueTransp};
   }
 `
 
@@ -99,9 +98,11 @@ const TechnologyListItem = styled.div`
     bottom: 50px;
     opacity: 0;
     text-align: center;
+    font-weight: 700;
   }
 
   &:hover p {
+    color: #597790;
     bottom: 0;
     opacity: 1;
   }
@@ -183,9 +184,9 @@ const AboutMe = () => {
       </ApresentationBox>
 
       <TechnologiesContainer>
-        <Subtitle data-aos="fade-up" data-aos-duration="1200">
+        <Title data-aos="fade-up" data-aos-duration="1200">
           Entre as tecnologias que atuo, estão:
-        </Subtitle>
+        </Title>
         <TechnologyList data-aos="fade-right" data-aos-duration="1400">
           {technologiesToList.map(technology => (
             <TechnologyListItem key={technology.name}>

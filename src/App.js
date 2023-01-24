@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
+
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+
 import { GlobalStyle } from './components/GlobalStyle';
 import styled from 'styled-components';
+
 import Header from './components/Header/Header';
 import AboutMe from './components/AboutMe/AboutMe'
+import Projects from './components/Projects/Projects';
 
 const AppContainer = styled.div`
-  background-image: linear-gradient(#182434f5,#799cbff0,#d4e4ed);
   position: absolute;
   top: 60px;
 `
@@ -26,6 +29,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <AboutMe />
+      <Projects />
     </AppContainer>
   );
 }

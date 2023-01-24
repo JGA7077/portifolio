@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "@fancyapps/ui": "^4.0.31",
     "aos": "^2.3.4",
     "react-scroll": "^1.8.9",
     "styled-components": "^5.3.6"

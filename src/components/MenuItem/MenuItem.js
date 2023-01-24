@@ -11,7 +11,7 @@ const MenuItem = ({linkUrl, linkName}) => {
         spy={true}
         smooth={true}
         offset={-60}
-        duration={500}
+        duration={250}
       >{linkName}</Link>
     </ListItem>
   )
