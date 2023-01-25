@@ -18,46 +18,75 @@ import jQueryIcon from '../../assets/imgs/jquery-icon.png'
 
 import { FlexboxContainer, MainTitle, TextParagraph, AboutMeSection, Title } from "../UI";
 
-import { blackestBlueTransp } from "../UI/variables";
+import { blackestBlueTransp, navyBlue, silverFont } from "../UI/variables";
 
 const ApresentationBox = styled.div`
-  ${FlexboxContainer({ justify: 'flex-start', align: 'flex-start' })};
+  ${FlexboxContainer({ direction: 'column' })};
   position: relative;
-  margin: 0 50px;
   z-index: 1;
+
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  @media (min-width: 1199px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `
 
 const BackgroundApresentation = styled.div`
   position: absolute;
-  width: 92%;
-  height: 150px;
+  width: 100%;
+  height: 100px;
   background-color: #8d98aa;
   right: 0;
-  top: 48px;
+  top: 68px;
   z-index: 0;
+
+  @media (min-width: 1199px) {
+    width: 80%;
+    height: 150px;
+    background-color: #8d98aa;
+  }
 `
 
 const ProfileImg = styled.img`
   border-radius: 50%;
-  width: 296px;
+  width: 215px;
+  margin-top: 48px;
+
+  @media (min-width: 1199px) {
+    width: 296px;
+    position: relative;
+  }
 `
 
 const TextBox = styled.div`
   border-radius: 8px;
   width: 100%;
   height: 50%;
-  padding: 20px 36px;
 
   h1 {
-    margin: 40px 0 20px;
+    margin: 20px 0;
     color: ${blackestBlueTransp};
+
+    @media (min-width: 1024px) {
+      margin: 90px 0 20px;
+    }
   }
 
   p {
-    text-align: justify;
+    text-align: center;
     margin: 0 auto;
     margin-bottom: 20px;
-    padding: 0 20px;
+
+    @media (min-width: 1024px) {
+      text-align: justify;
+      padding: 0px 50px;
+    }
   }
 `
 
@@ -65,11 +94,11 @@ const TechnologiesContainer = styled.div`
   width: 100%;
   ${FlexboxContainer({ direction: 'column' })};
   gap: 20px;
-  padding: 0 50px;
 
   h2 {
     align-self: center;
     margin: 0 0 20px;
+    color: #204467;
   }
 `
 
@@ -77,8 +106,11 @@ const TechnologyList = styled.div`
   width: 100%;
   ${FlexboxContainer()};
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 0 138px;
+  gap: 0px 50px;
+
+  @media (min-width: 1024px) {
+    gap: 30px 50px;
+  }
 `
 
 const TechnologyListItem = styled.div`
@@ -94,18 +126,28 @@ const TechnologyListItem = styled.div`
   }
 
   p {
-    position: absolute;
-    bottom: 50px;
-    opacity: 0;
     text-align: center;
     font-weight: 700;
+    color: ${navyBlue};
   }
 
-  &:hover p {
-    color: #597790;
-    bottom: 0;
-    opacity: 1;
+  @media (min-width: 1024px) {
+    p {
+      opacity: 0;
+      position: absolute;
+      bottom: 50px;
+      color: ${silverFont};
+      line-height: 16px;
+    }
+
+    &:hover p {
+      color: #597790;
+      bottom: -25px;
+      opacity: 1;
+    }
   }
+
+  
 `
 
 const technologiesToList = [
@@ -172,30 +214,35 @@ const AboutMe = () => {
   return (
     <AboutMeSection id="apresentacao">
       <BackgroundApresentation />
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-sm-12">
+            <ApresentationBox>
+              <ProfileImg src={profileImg} alt="Foto de Perfil" data-aos="fade-right" data-aos-duration="1000" />
+              <TextBox>
+                <MainTitle data-aos="fade-up" data-aos-duration="1100">Prazer, João Gabriel</MainTitle>
+                <TextParagraph data-aos="fade-up" data-aos-duration="1200">
+                  Tenho 29 anos, sou desenvolvedor FrontEnd e comecei a estudar desenvolvimento web a cerca de 3 anos. Tive a primeira oportunidade de ingressar na área como FrontEnd Júnior por volta de 1 ano e meio, hoje tenho trabalhado como Freelancer e estou em busca de enfrentar novos desafios e obter novos conhecimentos.
+                </TextParagraph>
+              </TextBox>
+            </ApresentationBox>
 
-      <ApresentationBox>
-        <ProfileImg src={profileImg} alt="Foto de Perfil" data-aos="fade-right" data-aos-duration="1000" />
-        <TextBox>
-          <MainTitle data-aos="fade-up" data-aos-duration="1100">Prazer, João Gabriel</MainTitle>
-          <TextParagraph data-aos="fade-up" data-aos-duration="1200">
-            Tenho 29 anos, sou desenvolvedor FrontEnd e comecei a estudar desenvolvimento web a cerca de 3 anos. Tive a primeira oportunidade de ingressar na área como FrontEnd Júnior por volta de 1 ano e meio, hoje tenho trabalhado como Freelancer e estou em busca de enfrentar novos desafios e obter novos conhecimentos.
-          </TextParagraph>
-        </TextBox>
-      </ApresentationBox>
-
-      <TechnologiesContainer>
-        <Title data-aos="fade-up" data-aos-duration="1200">
-          Entre as tecnologias que atuo, estão:
-        </Title>
-        <TechnologyList data-aos="fade-right" data-aos-duration="1400">
-          {technologiesToList.map(technology => (
-            <TechnologyListItem key={technology.name}>
-              <img src={technology.icon} alt={`Ícone do ${technology.name}`} />
-              <p>{technology.name}</p>
-            </TechnologyListItem>
-          ))}
-        </TechnologyList>
-      </TechnologiesContainer>
+            <TechnologiesContainer>
+              <Title data-aos="fade-up" data-aos-duration="1200">
+                Entre as tecnologias que atuo, estão:
+              </Title>
+              <TechnologyList data-aos="fade-right" data-aos-duration="1400">
+                {technologiesToList.map(technology => (
+                  <TechnologyListItem key={technology.name}>
+                    <img src={technology.icon} alt={`Ícone do ${technology.name}`} />
+                    <p>{technology.name}</p>
+                  </TechnologyListItem>
+                ))}
+              </TechnologyList>
+            </TechnologiesContainer>
+          </div>
+        </div>
+      </div>
     </AboutMeSection>
   )
 }

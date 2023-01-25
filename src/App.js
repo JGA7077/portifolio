@@ -13,6 +13,7 @@ import Projects from './components/Projects/Projects';
 const AppContainer = styled.div`
   position: absolute;
   top: 60px;
+  width: 100%;
 `
 
 function App() {

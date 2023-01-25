@@ -31,6 +31,7 @@ export const ProjectsSection = styled.section`
   padding: 30px 20px;
   position: relative;
   background-image: linear-gradient(#799cbf, #b8ccdd);
+  width: 100%;
 `
 
 export const ProjectsTitle = styled(Title)`

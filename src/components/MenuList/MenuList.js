@@ -1,7 +1,7 @@
 import { List } from "../UI";
 import MenuItem from "../MenuItem/MenuItem";
 
-const MenuList = () => {
+const MenuList = ({isMenuOpen}) => {
   const menuLinks = [
     // {linkName: "Apresentação", linkUrl: '#apresentacao'},
     // {linkName: "Projetos", linkUrl: '#projetos'},
@@ -14,7 +14,7 @@ const MenuList = () => {
   ]
 
   return (
-    <List>
+    <List className={isMenuOpen ? 'open' : ''}>
       {
         menuLinks.map(item => (
           <MenuItem key={item.linkUrl} linkUrl={item.linkUrl} linkName={item.linkName} />
